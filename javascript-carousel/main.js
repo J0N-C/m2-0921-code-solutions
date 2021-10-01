@@ -3,14 +3,15 @@ const $circleRow = document.querySelector('#circle-list');
 const $circleList = $circleRow.children;
 const $pokemonImage = document.querySelector('#pokemon-img');
 
+var intervalID = setInterval(scrollRight, 3000);
+
 $imageRow.addEventListener('click', function (event) {
   if (event.target.id !== 'left' && event.target.id !== 'right') return;
   let currentImage = currentActive();
   if (event.target.id === 'right') {
-    currentImage++;
-    if (currentImage === 5) {
-      currentImage = 0;
-    }
+    scrollRight();
+    resetScroll(intervalID);
+    return;
   }
   if (event.target.id === 'left') {
     currentImage--;
@@ -19,12 +20,28 @@ $imageRow.addEventListener('click', function (event) {
     }
   }
   newActive(currentImage);
+  resetScroll(intervalID);
 });
 
 $circleRow.addEventListener('click', function (event) {
   var currentImage = parseInt(event.target.getAttribute('data-index'));
   newActive(currentImage);
+  resetScroll(intervalID);
 });
+
+function scrollRight() {
+  let currentImage = currentActive();
+  currentImage++;
+  if (currentImage === 5) {
+    currentImage = 0;
+  }
+  newActive(currentImage);
+}
+
+function resetScroll(id) {
+  clearInterval(id);
+  intervalID = setInterval(scrollRight, 3000);
+}
 
 function currentActive() {
   for (let i = 0; i < $circleList.length; i++) {
