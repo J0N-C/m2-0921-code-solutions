@@ -1,0 +1,38 @@
+/*
+Angle-left:
+<i class="fas fa-angle-left"></i>
+angle-right:
+<i class="fas fa-angle-right"></i>
+empty circle:
+<i class="far fa-circle"></i>
+full circle:
+<i class="fas fa-circle"></i> */
+
+.container {
+  margin: 4rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.justify-cntr {
+  justify-content: center;
+}
+
+.justify-btwn {
+  justify-content: space-between;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.pokemonImg {
+  width: 50%;
+}
+
+.fa-circle {
+  padding: 0.5rem;
+}
