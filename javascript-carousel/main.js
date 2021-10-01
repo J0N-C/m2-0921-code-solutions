@@ -1,5 +1,6 @@
 const $imageRow = document.querySelector('#image-row');
-const $circleList = document.querySelector('#circle-list').children;
+const $circleRow = document.querySelector('#circle-list');
+const $circleList = $circleRow.children;
 const $pokemonImage = document.querySelector('#pokemon-img');
 
 $imageRow.addEventListener('click', function (event) {
@@ -18,7 +19,11 @@ $imageRow.addEventListener('click', function (event) {
     }
   }
   newActive(currentImage);
-  chooseImage(currentImage);
+});
+
+$circleRow.addEventListener('click', function (event) {
+  var currentImage = parseInt(event.target.getAttribute('data-index'));
+  newActive(currentImage);
 });
 
 function currentActive() {
@@ -34,6 +39,7 @@ function newActive(number) {
       $circleList[i].className = 'fas fa-circle fa-2x';
     }
   }
+  chooseImage(number);
 }
 
 function chooseImage(number) {
