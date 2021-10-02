@@ -1,29 +1,23 @@
-const $imageRow = document.querySelector('#image-row');
+const $clickRight = document.querySelector('#right');
+const $clickLeft = document.querySelector('#left');
 const $circleRow = document.querySelector('#circle-list');
 const $circleList = $circleRow.children;
 const $pokemonImage = document.querySelector('#pokemon-img');
 
 var intervalID = setInterval(scrollRight, 3000);
 
-$imageRow.addEventListener('click', function (event) {
-  if (event.target.id !== 'left' && event.target.id !== 'right') return;
-  let currentImage = currentActive();
-  if (event.target.id === 'right') {
-    scrollRight();
-    resetScroll(intervalID);
-    return;
-  }
-  if (event.target.id === 'left') {
-    currentImage--;
-    if (currentImage === -1) {
-      currentImage = 4;
-    }
-  }
-  newActive(currentImage);
+$clickRight.addEventListener('click', function () {
+  scrollRight();
+  resetScroll(intervalID);
+});
+
+$clickLeft.addEventListener('click', function () {
+  scrollLeft();
   resetScroll(intervalID);
 });
 
 $circleRow.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'I') return;
   var currentImage = parseInt(event.target.getAttribute('data-index'));
   newActive(currentImage);
   resetScroll(intervalID);
@@ -38,6 +32,15 @@ function scrollRight() {
   newActive(currentImage);
 }
 
+function scrollLeft() {
+  let currentImage = currentActive();
+  currentImage--;
+  if (currentImage === -1) {
+    currentImage = 4;
+  }
+  newActive(currentImage);
+}
+
 function resetScroll(id) {
   clearInterval(id);
   intervalID = setInterval(scrollRight, 3000);
@@ -45,15 +48,15 @@ function resetScroll(id) {
 
 function currentActive() {
   for (let i = 0; i < $circleList.length; i++) {
-    if (/fas/.test($circleList[i].className)) return i;
+    if ($circleList[i].matches('.fas')) return i;
   }
 }
 
 function newActive(number) {
   for (let i = 0; i < $circleList.length; i++) {
-    $circleList[i].className = 'far fa-circle fa-2x';
+    $circleList[i].classList.replace('fas', 'far');
     if (i === number) {
-      $circleList[i].className = 'fas fa-circle fa-2x';
+      $circleList[i].classList.replace('far', 'fas');
     }
   }
   chooseImage(number);
