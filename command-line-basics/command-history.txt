@@ -1,0 +1,500 @@
+    1  git config --global user.name "Jonathan Chiang"
+    2  git config --global user.email "jc91765@gmail.com"
+    3  git config --global --list
+    4  cd ~/repos
+    5  ls
+    6  cd m2-0921-code-solutions/
+    7  git status
+    8  git add .
+    9  git unstage .
+   10  git checkout master
+   11  git status
+   12  git restore
+   13  git restore --staged
+   14  git status
+   15  git pull origin master
+   16  git status
+   17  git restore --staged .editorconfig
+   18  git restore --staged .eslintrc
+   19  git restore --staged .gitignore
+   20  git restore --staged .stylelintrc
+   21  git status
+   22  git restore .editorconfig
+   23  git restore .eslintrc
+   24  git restore .gitignire
+   25  git restore .gitignore
+   26  git restore .stylelintrc
+   27  git status
+   28  git restore --staged __sample__/.eslintrc
+   29  git restore --staged __sample__/.component.jsx
+   30  git restore --staged __sample__/component.jsx
+   31  git restore --staged __sample__/index.html
+   32  git restore --staged __sample__/main.js
+   33  git restore --staged __sample__/styles.css
+   34  git restore --staged package-lock.json
+   35  git restore --staged package.json
+   36  git status
+   37  git restore __sample__/.eslintrc
+   38  git restore __sample__/component.jsx
+   39  git restore __sample__/index.html
+   40  git restore __sample__/main.js
+   41  git restore __sample__/styles.css
+   42  git restore package-lock.json
+   43  git restore package.json
+   44  git status
+   45  git branch javascript-custom-methods
+   46  git switch javascript-custom-methods 
+   47  git pull origin
+   48  git pull origin master
+   49  git switch master
+   50  npm ci
+   51  git status
+   52  git switch javascript-custom-methods 
+   53  git status
+   54  git add .
+   55  git commit -m "completed javascript-custom-methods - Jonathan Chiang"
+   56  git push origin javascript-custom-methods 
+   57  git switch master
+   58  git branch javascript-this
+   59  git switch javascript-this
+   60  git status
+   61  git add .
+   62  git commit -m "completed javascript-this - Jonathan Chiang"
+   63  git push origin javascript-this
+   64  git status
+   65  git switch master
+   66  git status
+   67  git branch javascript-prototypes
+   68  git status
+   69  git switch javascript-prototypes 
+   70  git status
+   71  git add .
+   72  git status
+   73  git commit -m "completed javascript-prototypes - Jonathan Chiang"
+   74  git push origin javascript-prototypes 
+   75  git switch master
+   76  git branch javascript-constructors
+   77  git switch javascript-constructors 
+   78  git status
+   79  git add .
+   80  git commit -m "completed javascript-constructors - Jonathan Chiang"
+   81  git status
+   82  git push origin javascript-constructors 
+   83  git switch master
+   84  git pull origin master
+   85  git branch javascript-bank
+   86  git pull origin master
+   87  git switch javascript-bank 
+   88  git status
+   89  cd ~/repos/m2-0921-code-solutions/
+   90  git status
+   91  git add .
+   92  git status
+   93  git commit -m "Completed javascript-timers - Jonathan Chiang"
+   94  git status
+   95  git push origin javascript-timers
+   96  git status
+   97  cd ~/repos/m2-0921-code-solutions/
+   98  git switch master
+   99  git pull origin master
+  100  git branch javascript-carousel
+  101  git switch javascript-carousel 
+  102  git status
+  103  git add .
+  104  git commit -m "working arrow scrolling"
+  105  git push origin javascript-carousel
+  106  git status
+  107  git add .
+  108  git commit -m "click circle switches image"
+  109  gitstatus
+  110  git status
+  111  git add .
+  112  git commit -m "
+  113  cancel
+  114  cd ~/repos/m2-0921-code-solutions/
+  115  git status
+  116  git commit -m "Completed javascript-carousel - Jonathan Chiang"
+  117  git push origin javascript-carousel 
+  118  cd ~/repos/m2-0921-code-solutions/
+  119  git status
+  120  git add .
+  121  git commit -m "revised main.js of javascript-carousel"
+  122  git push origin javascript-carousel
+  123  git switch master
+  124  git pull origin master
+  125  git branch issue-1-see-car
+  126  git pull origin master
+  127  cd ~/repos
+  128  git pull origin master
+  129  --ls
+  130  -list
+  131  -pwd
+  132  pwd
+  133  ls
+  134  git clone git@github.com:J0N-C/driving-game.git
+  135  cd ~/repos/driving-game/
+  136  npm -ci
+  137  npm-ci
+  138  -npm -ci
+  139  npm
+  140  npm ci
+  141  git branch --ls
+  142  --ls
+  143  git branch issue-1-see-car
+  144  git switch issue-1-see-car 
+  145  git status
+  146  git add .
+  147  git commit -m "html and css setup view car"
+  148  git push origin issue-1-see-car 
+  149  git status
+  150  git branch issue-2-steer-car
+  151  git switch issue-2-steer-car 
+  152  git branch -r
+  153  git switch master
+  154  git switch issue-1-see-car 
+  155  git branch -r
+  156  git switch issue-2-steer-car 
+  157  git add .
+  158  git commit -m "turning and transition initial setup"
+  159  git add .
+  160  git commit -m "turning and transition functionality"
+  161  git push origin issue-2-steer-car 
+  162  git branch -r
+  163  git add .
+  164  git commit -m "turn left and right"
+  165  cd ~/repos/m2-0921-code-solutions/
+  166  git pull origin master
+  167  git status
+  168  cd ~/repos/driving-game/
+  169  git status
+  170  git switch master
+  171  git add .
+  172  git commit -m "completed turning functionality"
+  173  git status
+  174  git push origin issue-2-steer-car 
+  175  git switch master
+  176  git pull origin master
+  177  git switch issue-2-steer-car 
+  178  git status
+  179  git add .
+  180  git status
+  181  git commit -m "commenting"
+  182  git push origin issue-2-steer-car 
+  183  git branch issue-2-turn-car
+  184  git switch issue-2-turn-car 
+  185  git status
+  186  git add .
+  187  git status
+  188  git switch issue-2-steer-car 
+  189  git branch -d issue-2-turn-car
+  190  git branch -m issue-2-steer-car issue-2-turn-car
+  191  git status
+  192  git branch -r
+  193  git status
+  194  git add .
+  195  git commit -m "simplify func"
+  196  git status
+  197  git push origin issue-2-turn-car 
+  198  git branch -r
+  199  git branch -d issue-2-steer-car
+  200  git branch -r
+  201  git status
+  202  git branch -r
+  203  git branch issue-3-user-can-start-car
+  204  git switch issue-3-user-can-start-car 
+  205  git status
+  206  git add .
+  207  git commit -m "car starts and moves"
+  208  git push origin issue-3-user-can-start-car 
+  209  git branch issue-4-user-can-stop-car
+  210  git switch issue-4-user-can-stop-car 
+  211  git status
+  212  git add .
+  213  git commit -m "car stop function"
+  214  git push origin issue-4-user-can-stop-car 
+  215  git switch master
+  216  git pull origin master
+  217  git switch issue-4-user-can-stop-car 
+  218  git switch master
+  219  npm ci
+  220  git switch issue-4-user-can-stop-car 
+  221  git status
+  222  git add .
+  223  git status
+  224  git branch issue-5-user-can-steergit branch -4
+  225  git branch  -r
+  226  git branch issue-5-user-can-steer
+  227  git switch issue-5-user-can-steer 
+  228  git branch -r
+  229  git status
+  230  git add .
+  231  git commit -m "completed steer car func"
+  232  git status
+  233  git add .
+  234  git commit -m "commenting"
+  235  git push origin issue-5-user-can-steer 
+  236  cd ~/repos/driving-game/
+  237  git status
+  238  git switch master
+  239  git pull origin master
+  240  git switch issue-5-user-can-steer 
+  241  git status
+  242  git branch issue-6-user-can-choose-model
+  243  git status
+  244  git add .
+  245  git commit -m "added car model selection"
+  246  git status
+  247  git add .
+  248  git commit -m "added car model selection"
+  249  git push origin issue-5-user-can-steer 
+  250  git status
+  251  cd ~/repos/m2-0921-code-solutions/
+  252  git branch http-messages
+  253  git switch http-messages
+  254  http http://www.example.com
+  255  http --verbose http://www.example.com
+  256  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  257  git switch master
+  258  git switch http-messages
+  259  git status
+  260  http http://www.example.com
+  261  http --verbose http://www.example.com
+  262  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  263  http --body GET https://example.com > index.html
+  264  git status
+  265  git add .
+  266  git commit -m "completed https-messages"
+  267  git push origin http-messages
+  268  git switch master
+  269  git branch javascript-ajax
+  270  git switch javascript-ajax
+  271  git status
+  272  git add .
+  273  git commit -m "completed javscript-ajax"
+  274  git push origin javascript-ajax 
+  275  cd ~/repos
+  276  git status
+  277  http https://example.com
+  278  http http://numbersapi.com/42
+  279  http http://numbersapi.com/45
+  280  http --body GET http://numbersapi.com/100
+  281  http http://numbersapi.com/1337/trivia?notfound=floor&fragment
+  282  http http://numbersapi.com/10/11/date
+  283  cd ~/repos/ajax-project/
+  284  git status
+  285  git add .
+  286  git status
+  287  git add .
+  288  git commit -m "Completed issue-1 view fact"
+  289  git push origin user-can-view-fact-of-day 
+  290  git status
+  291  git branch user-can-generate-new-fact
+  292  git switch user-can-generate-new-fact 
+  293  git status
+  294  git add .
+  295  git commit -m "completed user-can-generate-new-fact"
+  296  git switch master
+  297  git pull origin master
+  298  git switch user-can-generate-new-fact 
+  299  git status
+  300  git push origin user-can-generate-new-fact 
+  301  git status
+  302  git add .
+  303  git commit -m "revised js"
+  304  git status
+  305  git push origin user-can-generate-new-fact 
+  306  cd ~/repos/ajax-project/
+  307  git status
+  308  git add .
+  309  git commit -m "completed user-can-save-fact"
+  310  git status
+  311  git push origin user-can-save-fact 
+  312  git branch user-can-view-saved-facts
+  313  git switch user-can-view-saved-facts 
+  314  git status
+  315  cd ~/repos/ajax-project/
+  316  git status
+  317  git add .
+  318  git commit -m "added view switching to calendar"
+  319  git add .
+  320  git commit -m "added view switching to calendar"
+  321  git push origin user-can-view-saved-facts 
+  322  git status
+  323  git add .
+  324  git commit -m "calendar sidebar css"
+  325  git push origin user-can-view-saved-facts 
+  326  git status
+  327  git add .
+  328  git commit -m "clicking month changes fact list"
+  329  git push origin user-can-view-saved-facts 
+  330  git status
+  331  git add .
+  332  git commit -m "completed user-can-view-saved-facts"
+  333  git status
+  334  git push origin user-can-view-saved-facts
+  335  git status
+  336  git add .
+  337  git commit -m "viewing calendar defaults to current month"
+  338  git push origin user-can-view-saved-facts 
+  339  git switch master
+  340  git pull origin master
+  341  git status
+  342  git add .
+  343  git commit -m "starting delete button"
+  344  git push origin user-can-view-saved-facts
+  345  git branch user-can-delete-saved
+  346  git switch user-can-delete-saved 
+  347  cd ~/repos/ajax-project/
+  348  git status
+  349  git add .
+  350  git commit -m "delete button css"
+  351  git push origin user-can-delete-saved 
+  352  git status
+  353  git add .
+  354  git commit -m "delete button css rev"
+  355  git status
+  356  git push origin user-can-delete-saved 
+  357  git status
+  358  git add .
+  359  git commit -m "revise css"
+  360  git add .
+  361  git commit -m "revise css"
+  362  git push origin user-can-delete-saved 
+  363  git status
+  364  git add .
+  365  git commit -m "data model update"
+  366  git push origin user-can-delete-saved 
+  367  cd ~/repos/ajax-project/
+  368  git status
+  369  git add .
+  370  git commit -m "completed user-can-delete-saved"
+  371  git push origin user-can-delete-saved 
+  372  cd ~/repos/ajax-project/
+  373  git status
+  374  git switch master
+  375  git status
+  376  git pull origin master
+  377  git status
+  378  git add .
+  379  git commit -m "changed to proxy request for portfolio temp"
+  380  git push origin master
+  381  git status
+  382  git add .
+  383  git commit -m "proxy rev test"
+  384  git push origin master
+  385  git status
+  386  git pull origin master
+  387  cd ~/repos/m2-0921-code-solutions/
+  388  git branch es6-const-let
+  389  git switch es6-const-let 
+  390  git status
+  391  git add .
+  392  git commit -m "completed es6-const-let"
+  393  git status
+  394  git push origin es6-const-let 
+  395  git switch master
+  396  git branch es6-template-literals
+  397  git switch es6-template-literals 
+  398  git status
+  399  git add .
+  400  git commit -m "completed es6-template-literal"
+  401  git status
+  402  git push origin es6-template-literals 
+  403  git switch master
+  404  bit branch es6-destructuring
+  405  git branch es6-destructuring
+  406  git switch es6-d
+  407  git switch es6-destructuring 
+  408  git pull origin master
+  409  git status
+  410  git add .
+  411  git commit -m "completed es6-destructuring"
+  412  git push origin es6-destructuring 
+  413  git add .
+  414  git commit -m "fix variable declaration"
+  415  git push origin es6-destructuring 
+  416  git switch master
+  417  git pull origin master
+  418  git branch es6-arrow-functions
+  419  git switch es6-arrow-functions 
+  420  git status
+  421  git add .
+  422  git commit -, 
+  423  git commit -m "completed es6-arrow-functions"
+  424  git push origin es6-arrow-functions 
+  425  git switch master
+  426  git status
+  427  git branch command-line-basics
+  428  git switch command-line-basics 
+  429  cd command-line-basics/
+  430  pwd
+  431  man
+  432  man man
+  433  man cat
+  434  man cat laziness.txt
+  435  cat laziness.txt
+  436  cat impatience.txt
+  437  cat three-virtues.txt
+  438  cat hubris.txt
+  439  cat laziness.txt impatience.txt hubris.txt > three-virtues
+  440  cat three-virtues
+  441  man ls
+  442  ls
+  443  ls -a
+  444  man ls
+  445  ls -F
+  446  ls lfz-staff/
+  447  ls -a lfz-staff/
+  448  ls -F lfz-staff
+  449  ls -aF lfz-staff > lfz-staff/contents.txt
+  450  cat lfz-staff/contents.txt
+  451  pwd
+  452  man pwd
+  453  pwd > i-was-here.txt
+  454  ls
+  455  cad i-was-here
+  456  cat i-was-here
+  457  cat i-was-here.txt
+  458  man echo
+  459  echo 'Hello, World!'
+  460  echo 'Hello, World!' > hello.txt
+  461  ls
+  462  cat hello.txt
+  463  man touch
+  464  touch > tag-youre-it.txt
+  465  ls
+  466  touch snoot/boop.txt
+  467  ls snoot/
+  468  man mkdir
+  469  mkdir -p parent
+  470  ls
+  471  man mkdir
+  472  mkdir -p parent/child/grandchild
+  473  ls
+  474  ls parent/
+  475  ls parent/child
+  476  ls -a parent/
+  477  .touch parent/child/grandchild/.gitkeep
+  478  touch parent/child/grandchild/.gitkeep
+  479  ls -a parent/
+  480  ls -a parent/child/grandchild
+  481  man mv
+  482  mv pokiemans pokemon
+  483  ls
+  484  man rm
+  485  rm lol.txt
+  486  ls
+  487  man rm
+  488  rm kill-me/
+  489  rm -r kill-me/
+  490  ls
+  491  man cp
+  492  cp and-then.txt
+  493  man cp
+  494  cp and-then.txt no-and-then.txt
+  495  ls
+  496  cat and-then.txt
+  497  cat no-and-then.txt
+  498  man history
+  499  history
+  500  history > command-history.txt
