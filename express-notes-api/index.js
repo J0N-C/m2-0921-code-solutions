@@ -35,6 +35,16 @@ app.get('/api/notes/:id', function (req, res) {
   });
 });
 
-app.listen(3000, () => {
+app.post('/api/notes', function (req, res) {
+  const newText = req.body;
+  fs.readFile('data.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    const obj = JSON.parse(data);
+    const { nextId: idNum } = obj;
+    res.send({ [idNum]: newText }); // temp test text sending
+    // read file first, turn newText into new entry in data.json, log id num, increment nextId, then overwrite file
+  });
+});
 
+app.listen(3000, () => {
 });
