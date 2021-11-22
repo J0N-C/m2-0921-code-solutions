@@ -44,7 +44,10 @@ app.post('/api/notes', function (req, res) {
     if (err) throw err;
     const obj = JSON.parse(data);
     const { nextId: idNum } = obj;
-    res.send({ [idNum]: newText }); // temp test text sending
+    obj.notes[idNum] = { content: newText, id: idNum };
+    obj.nextId++;
+    res.status(201).send(obj);
+    // temp test text sending
     // read file first, turn newText into new entry in data.json, log id num, increment nextId, then overwrite file
   });
 });
