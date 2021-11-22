@@ -37,7 +37,7 @@ app.get('/api/notes/:id', function (req, res) {
 
 app.post('/api/notes', function (req, res) {
   const newText = req.body.content; // expected post format json: content="text goes here"
-  if (newText.length === 0) {
+  if (newText === undefined || newText.length === 0) {
     return res.status(400).send({ error: 'content is a required field' });
   }
   fs.readFile('data.json', 'utf8', (err, data) => {
