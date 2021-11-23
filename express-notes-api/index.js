@@ -11,6 +11,12 @@ function ObjtoArr(obj) {
   return arr;
 }
 
+function posIntCheck(res, num) {
+  if (isNaN(num) || num < 1) {
+    return res.status(400).send({ error: 'id must be a positive integer' });
+  }
+}
+
 app.get('/api/notes', function (req, res) {
   fs.readFile('data.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -22,9 +28,7 @@ app.get('/api/notes', function (req, res) {
 
 app.get('/api/notes/:id', function (req, res) {
   const idNum = parseInt(req.params.id);
-  if (isNaN(idNum) || idNum < 1) {
-    return res.status(400).send({ error: 'id must be a positive integer' });
-  }
+  posIntCheck(res, idNum);
   fs.readFile('data.json', 'utf8', (err, data) => {
     if (err) throw err;
     const obj = JSON.parse(data);
@@ -50,6 +54,19 @@ app.post('/api/notes', function (req, res) {
       if (err) return res.status(500).send({ error: 'An unexpected error occurred.' });
       res.status(201).send(obj.notes[idNum]);
     });
+  });
+});
+
+app.delete('/api/notes/:id', function (req, res) {
+  const idNum = parseInt(req.params.id);
+  posIntCheck(res, idNum);
+  fs.readFile('data.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    const obj = JSON.parse(data);
+    if (obj.notes[idNum] === undefined) {
+      return res.status(404).send({ error: `cannot find note with id ${idNum}` });
+    }
+    return res.status(200).send(obj.notes[idNum]); // replace with real delete
   });
 });
 
