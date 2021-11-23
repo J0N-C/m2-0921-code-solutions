@@ -46,9 +46,10 @@ app.post('/api/notes', function (req, res) {
     const { nextId: idNum } = obj;
     obj.notes[idNum] = { content: newText, id: idNum };
     obj.nextId++;
-    res.status(201).send(obj);
-    // temp test text sending
-    // read file first, turn newText into new entry in data.json, log id num, increment nextId, then overwrite file
+    fs.writeFile('data.json', JSON.stringify(obj, null, 2), err => {
+      if (err) return res.status(500).send({ error: 'An unexpected error occurred.' });
+      res.status(201).send(obj.notes[idNum]);
+    });
   });
 });
 
