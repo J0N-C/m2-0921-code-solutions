@@ -72,5 +72,28 @@ app.delete('/api/notes/:id', function (req, res) {
   });
 });
 
+app.put('/api/notes/:id', function (req, res) {
+  const idNum = parseInt(req.params.id);
+  const newText = req.body.content;
+  if (isNaN(idNum) || idNum < 1) {
+    return res.status(400).send({ error: 'id must be a positive integer' });
+  }
+  if (newText === undefined || newText.length === 0) {
+    return res.status(400).send({ error: 'content is a required field' });
+  }
+  fs.readFile('data.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    const obj = JSON.parse(data);
+    if (obj.notes[idNum] === undefined) {
+      return res.status(404).send({ error: `cannot find note with id ${idNum}` });
+    }
+    obj.notes[idNum].content = newText;
+    fs.writeFile('data.json', JSON.stringify(obj, null, 2), err => {
+      if (err) return res.status(500).send({ error: 'An unexpected error occurred.' });
+      res.status(201).send(obj.notes[idNum]);
+    });
+  });
+});
+
 app.listen(3000, () => {
 });
