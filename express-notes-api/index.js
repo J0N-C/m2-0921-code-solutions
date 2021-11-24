@@ -21,8 +21,8 @@ app.get('/api/notes', function (req, res) {
 });
 
 app.get('/api/notes/:id', function (req, res) {
-  const idNum = parseInt(req.params.id);
-  if (isNaN(idNum) || idNum < 1) {
+  const idNum = Number(req.params.id);
+  if (isNaN(idNum) || idNum < 1 || !(Number.isInteger(idNum))) {
     return res.status(400).send({ error: 'id must be a positive integer' });
   }
   fs.readFile('data.json', 'utf8', (err, data) => {
@@ -36,7 +36,7 @@ app.get('/api/notes/:id', function (req, res) {
 });
 
 app.post('/api/notes', function (req, res) {
-  const newText = req.body.content; // expected post format json: content="text goes here"
+  const newText = req.body.content;
   if (newText === undefined || newText.length === 0) {
     return res.status(400).send({ error: 'content is a required field' });
   }
@@ -54,8 +54,8 @@ app.post('/api/notes', function (req, res) {
 });
 
 app.delete('/api/notes/:id', function (req, res) {
-  const idNum = parseInt(req.params.id);
-  if (isNaN(idNum) || idNum < 1) {
+  const idNum = Number(req.params.id);
+  if (isNaN(idNum) || idNum < 1 || !(Number.isInteger(idNum))) {
     return res.status(400).send({ error: 'id must be a positive integer' });
   }
   fs.readFile('data.json', 'utf8', (err, data) => {
@@ -73,11 +73,11 @@ app.delete('/api/notes/:id', function (req, res) {
 });
 
 app.put('/api/notes/:id', function (req, res) {
-  const idNum = parseInt(req.params.id);
-  const newText = req.body.content;
-  if (isNaN(idNum) || idNum < 1) {
+  const idNum = Number(req.params.id);
+  if (isNaN(idNum) || idNum < 1 || !(Number.isInteger(idNum))) {
     return res.status(400).send({ error: 'id must be a positive integer' });
   }
+  const newText = req.body.content;
   if (newText === undefined || newText.length === 0) {
     return res.status(400).send({ error: 'content is a required field' });
   }
@@ -90,7 +90,7 @@ app.put('/api/notes/:id', function (req, res) {
     obj.notes[idNum].content = newText;
     fs.writeFile('data.json', JSON.stringify(obj, null, 2), err => {
       if (err) return res.status(500).send({ error: 'An unexpected error occurred.' });
-      res.status(201).send(obj.notes[idNum]);
+      res.status(200).send(obj.notes[idNum]);
     });
   });
 });
