@@ -1,5 +1,4 @@
-select  "filmId",
-        "title",
+select  "title",
         "description",
         "releaseYear"
     from "films"
