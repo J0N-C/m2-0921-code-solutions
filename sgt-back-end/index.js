@@ -79,7 +79,7 @@ app.post('/api/grades', (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       const newGrade = result.rows;
-      return res.status(201).json(newGrade);
+      res.status(201).json(newGrade);
     })
     .catch(err => {
       console.error(err);
@@ -126,14 +126,32 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     });
 });
 
+app.delete('/api/grades/:gradeId', (req, res, next) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    return res.status(400).json({ error: 'gradeId must be a positive integer' });
+  }
+  const sql = `
+    delete from "grades"
+    where "gradeId" = $1
+    returning *
+      `;
+  const params = [gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        res.status(404).json({ error: `Cannot find grade with gradeId ${gradeId}` });
+      } else {
+        res.status(204);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      return res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
+});
+
 app.listen(3000, () => {
 
 });
-
-/*
-testing notes.
-Current problem: successful put still returns 404, no result or grade ever obtained
-sudo service postgresql start
-http -v get http://localhost:3000/api/grades
-http -v post http://localhost:3000/api/grades name="test name" score=0 course=""
-*/
