@@ -61,10 +61,14 @@ app.get('/api/grades', (req, res, next) => {
 
 app.post('/api/grades', (req, res, next) => {
   const newEntry = req.body;
-  for (const property in newEntry) {
-    if (newEntry[property] === undefined || newEntry[property].length === 0) {
-      return res.status(400).json({ error: `${property} is a required field.` });
-    }
+  if (newEntry.name === undefined || newEntry.name.length === 0) {
+    return res.status(400).json({ error: 'name is a required field.' });
+  }
+  if (newEntry.course === undefined || newEntry.course.length === 0) {
+    return res.status(400).json({ error: 'course is a required field.' });
+  }
+  if ((typeof newEntry.score === 'string' && newEntry.score.length === 0) || newEntry.score === undefined) {
+    return res.status(400).json({ error: 'score is a required field.' });
   }
   newEntry.score = Number(newEntry.score);
   if (!Number.isInteger(newEntry.score) || newEntry.score > 100 || newEntry.score < 0) {
@@ -93,10 +97,14 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     return res.status(400).json({ error: 'gradeId must be a positive integer' });
   }
   const newEntry = req.body;
-  for (const property in newEntry) {
-    if (newEntry[property] === undefined || newEntry[property].length === 0) {
-      return res.status(400).json({ error: `${property} is a required field.` });
-    }
+  if (newEntry.name === undefined || newEntry.name.length === 0) {
+    return res.status(400).json({ error: 'name is a required field.' });
+  }
+  if (newEntry.course === undefined || newEntry.course.length === 0) {
+    return res.status(400).json({ error: 'course is a required field.' });
+  }
+  if ((typeof newEntry.score === 'string' && newEntry.score.length === 0) || newEntry.score === undefined) {
+    return res.status(400).json({ error: 'score is a required field.' });
   }
   newEntry.score = Number(newEntry.score);
   if (!Number.isInteger(newEntry.score) || newEntry.score > 100 || newEntry.score < 0) {
